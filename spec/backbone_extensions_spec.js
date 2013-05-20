@@ -27,7 +27,9 @@
           color: 'burgundy'
         }
       ]);
-      return collection.url = 'cats';
+      return collection.url = function() {
+        return 'cats';
+      };
     });
     describe('syncDirtyAndDestroyed', function() {
       return it('calls syncDirty and syncDestroyed', function() {

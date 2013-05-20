@@ -13,7 +13,7 @@ describe 'offline localStorage sync', ->
     window.localStorage.setItem 'cats3', '{"id": "2", "color": "auburn"}'
     window.localStorage.setItem 'cats3', '{"id": "3", "color": "burgundy"}'
     collection = new window.Backbone.Collection [{id: 2, color: 'auburn'}, {id: 3, color: 'burgundy'}]
-    collection.url = 'cats'
+    collection.url = -> 'cats'
 
   describe 'syncDirtyAndDestroyed', ->
     it 'calls syncDirty and syncDestroyed', ->
